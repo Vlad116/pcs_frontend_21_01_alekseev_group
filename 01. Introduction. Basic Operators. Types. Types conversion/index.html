@@ -1,0 +1,63 @@
+<!-- Тут она только для того что бы продемонстрировать подключение скрипнта к странице -->
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>flexbox</title>
+    <meta name="description" content="Learn flexbox">
+    <meta name="author" content="Just example">
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <style>
+        @import url("index.css");
+    </style>
+	<script>
+		console.log('Hello world from <script>!')
+	</script>
+</head>
+
+<body onload='console.log("Hello world from onload!")'>
+    <ul class="navigation">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <div class="wrapper">
+        <header class="header">Заголовок</header>
+        <article class="main">
+            <p>Длинный и очень интересный текст, который нужен тут исключительно для примера. Очень интересно, но ничего не понятно!
+            </p>
+        </article>
+        <aside class="aside aside-1">
+            Aside 1 тут могла бы быть ваша реклама
+        </aside>
+
+        <aside class="aside aside-2">
+            Aside 2 тут могла бы быть ваша реклама
+        </aside>
+        <footer class="footer">
+            Footer
+        </footer>
+    </div>
+
+    <div class="parent">
+        <div class="child">Привет флекс</div>
+        <div class="child">Привет флекс</div>
+        <div class="child">Привет флекс</div>
+    </div>
+
+    <div class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+    </div>
+	<script src="operators.js"></script>
+</body>
+
+</html>
