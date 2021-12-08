@@ -1,0 +1,37 @@
+body {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin: 0;
+}
+
+#square {
+    cursor: pointer;
+    width: 160px;
+    height: 160px;
+    position: absolute;
+}
+
+.movable {
+}
+
+#square.grey {
+    background: rgb(122, 119, 119);
+}
+  
+#square.blue {
+    background: #03f;
+
+}
+
+#square.pink {
+    background: rgb(255, 0, 212) ;
+}
+
+#square.green{
+    background: #0c3;
+}
+  
+#square.black{
+    background: #000;
+}

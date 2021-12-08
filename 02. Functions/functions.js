@@ -48,19 +48,6 @@ const sayHelloArrowFunction = (message = 'world') => {
 //     // реализация функции-помощника
 // }
 
-const fibonacci = (() => {
-    let a = 0;
-    let b = 1;  
-    let c = 0;
-	console.log(c)
-    return function getNext() { 
-        с = b;
-        [a, b] = [b, a + b];
-		console.log(c)
-        return c; 
-    }
-})();
-
 // const fibonacci = (() => {
 // 	let a,b,c;
 // 	return function () {
