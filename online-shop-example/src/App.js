@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import { Shop, Product } from './pages'
 import './App.css';
+import 'semantic-ui-css/semantic.min.css'
 
 const App = () => {
   return (
@@ -10,7 +11,7 @@ const App = () => {
 				<Route path={'/'} element={<MainLayout/>}>
 					<Route index element={<Shop/>}/>
 				</Route>
-				<Route path={'products'} element={<MainLayout/>}>
+				<Route path={'product'} element={<MainLayout/>}>
 					{/* <Route index element = {<Products>}/> */}
 					<Route path={':productId'} element={<Product/>}/>
 				</Route>

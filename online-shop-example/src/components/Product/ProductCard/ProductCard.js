@@ -2,8 +2,7 @@ import React from 'react';
 import { Card, Image, Icon, Button } from 'semantic-ui-react';
 import "../../../App.css";
 
-const ProductCard = book => {
-  const { title, author, price, image, addToCart, addedCount } = book;
+const ProductCard = ({ title, author, price, image, addToCart, addedCount }) => {
   return (
     <Card>
       <div className="card-image">
@@ -21,7 +20,7 @@ const ProductCard = book => {
           {price}
         </p>
       </Card.Content>
-      <Button onClick={addToCart.bind(this, book)}>
+      <Button onClick={addToCart}>
         Добавить в корзину {addedCount > 0 && `(${addedCount})`}
       </Button>
     </Card>

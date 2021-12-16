@@ -16,12 +16,13 @@ const MenuComponent = ({ totalPrice, count, items }) => (
 			  Корзина (<b>{count}</b>)
 			</Menu.Item>
 		  }
-		  content={items.map(book => (
-			<CartComponent {...book} />
-		  ))}
 		  on="click"
 		  hideOnScroll
-		/>
+		>
+			{items.map(book => (
+				<CartComponent {...book} />
+			))}
+		</Popup>
 	  </Menu.Menu>
 	</Menu>
 );
