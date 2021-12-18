@@ -17,6 +17,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { getData } from '../utils/api'
+import { host } from '../constants'
 
 function Copyright(props) {
   return (
@@ -45,7 +46,7 @@ export default function Login() {
 		email: formData.get('email'),
 		password: formData.get('password'),
 		});
-		getData("http://localhost:4000/users").then((data) => {
+		getData(`${host}/users`).then((data) => {
 			console.log(data);
 			const user = data.find(item => item.email === formData.get('email') && item.password === formData.get('password'))
 			console.log(user.id);

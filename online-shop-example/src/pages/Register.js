@@ -15,6 +15,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { postData, getData } from '../utils/api';
+import { host } from '../constants'
 
 function Copyright(props) {
   return (
@@ -35,7 +36,7 @@ export default function Register() {
 	const navigate = useNavigate();
 
 	const checkAvailableEmail = async (formDataEmail) => {
-		return getData("http://localhost:4000/users").then((data) => {
+		return getData(`${host}/users`).then((data) => {
 			const user = data.find(item => item.email === formDataEmail)
 			return user === undefined || data.length === 0 ? true : false 
 		});
@@ -46,7 +47,7 @@ export default function Register() {
 		const formData = new FormData(event.currentTarget);
 		checkAvailableEmail(formData.get('email')).then((isAvailableEmail) => {
 			if(isAvailableEmail) {
-				postData("http://localhost:4000/users", "POST", 
+				postData(`${host}/users`, "POST", 
 					{
 						email: formData.get('email'),
 						password: formData.get('password'),

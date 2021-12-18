@@ -18,7 +18,7 @@ import Filter from '../components/Product/Filter/Filter';
 import ProductCard from '../components/Product/ProductCard/ProductCard'
 import { getData } from '../utils/api.js'
 import { searchBooks } from '../utils/productsHelper'
-
+import { host } from '../constants'
 
 // function ScrollTop(props) {
 // 	const { children, window } = props;
@@ -95,7 +95,7 @@ const Shop = (props) => {
 	useEffect(() => {
 		if(!isLoading) {
 			setLoading(true)
-			getData("http://localhost:4000/products").then((json) => {
+			getData(`${host}/products`).then((json) => {
 				setBooks(json)
 				setLoading(false)
 			})
