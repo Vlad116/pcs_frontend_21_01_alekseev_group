@@ -2,6 +2,90 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## JSON Server
+
+npm install -g json-server
+
+### Файл данных
+
+Cоздаем в корне проекта файл db.json:
+
+- В нем ключи обьекта будут являться роутами api и отдавать данные по данной сущности
+
+`{
+    "products": [
+		 {
+			"id": 0,
+			"title": "Происхождение",
+			"author": "Дэн Браун",
+			"image": "https://cv9.litres.ru/pub/c/elektronnaya-kniga/cover_415/27624091-den-braun-proishozhdenie-27624091.jpg",
+			"price": 710,
+			"rating": 3
+		}, 
+		...
+  	],
+  	"users": [
+      {
+	  	"id": 0,
+       	"email": ...,
+        "passwordHash": ...,
+        "login": ...,
+        "name": "Дэн Браун",
+      },
+  	]
+}`
+
+GET    /products - получение всех товаров 
+GET    /products/1 - получение данных о товаре с id - 0 
+(в структуре обьекта обязательно поле id должно быть:
+		
+`{
+	"id": 0, (!!!)
+	"title": "Происхождение",
+	"author": "Дэн Браун",
+	"image": "https://cv9.litres.ru/pub/c/elektronnaya-kniga/cover_415/27624091-den-braun-proishozhdenie-27624091.jpg",
+	"price": 710,
+	"rating": 3
+},`
+    ...
+
+POST   /products - добавление товаров списком
+PUT    /products/1 - изменение опредленного товара в бд
+PATCH  /products/1
+DELETE /products/1 - удаление товара из бд
+
+https://www.npmjs.com/package/json-server - подробнее информация о возможных функциях
+
+### Создаем скрипт сервера
+
+Тоже в корне проекта создаем файл json-server.js
+
+для дефолтного сервера:
+`
+const jsonServer = require('json-server')
+const server = jsonServer.create()
+const router = jsonServer.router('db.json') // тут путь к вашему json в котором данные хранятся или их структура просто, если нет предзаполненных
+const middleware = jsonServer.defaults()
+
+server.use((req, res, next) => {
+	setTimeout(next, 1000)
+})
+server.use(middleware)
+server.use(router)
+server.listen(3000, () => {
+	console.log(`JSON Server is running...`)
+})
+`
+
+### Запуск
+
+открываем вторую консоль и вводим:
+  
+  `json-server --watch db.json --port 3001` (свободный порт не 3000 прописываете просто, 3000 для самого реакт приложения занят будет)
+  
+
+  --id, -i           Set database id property (e.g. _id)         [default: "id"] - можно указать как id сущности и другое поле, если у вас не id а uuid например или ещее по другому как-нибудь, но лучше просто везде "id" присваивать
+
 ## Available Scripts
 
 In the project directory, you can run:
