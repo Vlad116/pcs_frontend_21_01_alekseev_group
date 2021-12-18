@@ -12,38 +12,40 @@ Cоздаем в корне проекта файл db.json:
 
 - В нем ключи обьекта будут являться роутами api и отдавать данные по данной сущности
 
-{
-	"products": [
-    {
-			"id": 0,
-			"title": "Происхождение",
-			"author": "Дэн Браун",
-			"image": "https://cv9.litres.ru/pub/c/elektronnaya-kniga/cover_415/27624091-den-braun-proishozhdenie-27624091.jpg",
-			"price": 710,
-			"rating": 3
-		}, ...
-  ]
+`{
+    "products": [
+     	{
+	    "id": 0,
+	    "title": "Происхождение",
+	    "author": "Дэн Браун",
+	    "image": "https://cv9.litres.ru/pub/c/elektronnaya-kniga/cover_415/27624091-den-braun-proishozhdenie-27624091.jpg",
+	    "price": 710,
+	    "rating": 3
+ 	}, ...
+  ],
   "users": [
-    {
-			"id": 0,
-      "email": ...,
-      "passwordHash": ...,
-      "login": ...,
-			"name": "Дэн Браун",
-		},
+      {
+	"id": 0,
+        "email": ...,
+        "passwordHash": ...,
+        "login": ...,
+        "name": "Дэн Браун",
+      },
   ]
+}`
 
 GET    /products - получение всех товаров 
 GET    /products/1 - получение данных о товаре с id - 0 
 (в структуре обьекта обязательно поле id должно быть:
-		{
-			"id": 0,
-			"title": "Происхождение",
-			"author": "Дэн Браун",
-			"image": "https://cv9.litres.ru/pub/c/elektronnaya-kniga/cover_415/27624091-den-braun-proishozhdenie-27624091.jpg",
-			"price": 710,
-			"rating": 3
-		},
+		
+`{
+	"id": 0, (!!!)
+	"title": "Происхождение",
+	"author": "Дэн Браун",
+	"image": "https://cv9.litres.ru/pub/c/elektronnaya-kniga/cover_415/27624091-den-braun-proishozhdenie-27624091.jpg",
+	"price": 710,
+	"rating": 3
+},`
     ...
 
 POST   /products - добавление товаров списком
@@ -58,7 +60,7 @@ https://www.npmjs.com/package/json-server - подробнее информац�
 Тоже в корне проекта создаем файл json-server.js
 
 для дефолтного сервера:
-
+`
 const jsonServer = require('json-server')
 const server = jsonServer.create()
 const router = jsonServer.router('db.json') // тут путь к вашему json в котором данные хранятся или их структура просто, если нет предзаполненных
@@ -72,6 +74,7 @@ server.use(router)
 server.listen(3000, () => {
 	console.log(`JSON Server is running...`)
 })
+`
 
 ### Запуск
 
