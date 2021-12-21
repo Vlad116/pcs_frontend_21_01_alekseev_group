@@ -4,7 +4,7 @@ import Menu from '../components/Menu/Menu'
 
 
 
-const Shop = () => {
+const Home = () => {
     return (
 		<>
 			<Menu />
@@ -15,4 +15,4 @@ const Shop = () => {
     )
 }
 
-export default Shop;
+export default Home;

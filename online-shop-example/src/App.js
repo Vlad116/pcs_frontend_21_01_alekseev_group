@@ -1,13 +1,9 @@
-import React, { useContext, createContext, useState } from "react";
+import React from "react";
 import { 
 	BrowserRouter, 
 	Route, 
 	Routes, 	
-	Switch,
-	Link,
-	Navigate,
-	useHistory,
-	useLocation 
+	Navigate
 } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import { Shop, Home, Product, Login, Register } from './pages'
@@ -37,32 +33,32 @@ const PrivateRoute = ({ children, ...rest }) =>
 const App = () => {
   return (
 	<BrowserRouter>
-			<Routes>
-				<Route path={'login'} element={<Login/>} />
-				<Route path={'register'} element={<Register/>}/>
-				<Route path={'/'} element={<MainLayout/>}>
-					<Route index element={<Home/>}/>
-					<Route 
-						path={'catalog'} 
-						element={
-							<PrivateRoute>
-								<Shop/>
-							</PrivateRoute>
-						}
-					/>
-				</Route>
-				<Route path={'product'} element={<MainLayout/>}>
-					{/* <Route index element = {<Products>}/> */}
-					<Route 
-						path={':productId'} 
-						element={
-							<PrivateRoute>
-								<Product/>
-							</PrivateRoute>
-						}
-					/>
-				</Route>
-			</Routes>
+		<Routes>
+			<Route path={'login'} element={<Login/>} />
+			<Route path={'register'} element={<Register/>}/>
+			<Route path={'/'} element={<MainLayout/>}>
+				<Route index element={<Home/>}/>
+				<Route 
+					path={'catalog'} 
+					element={
+						<PrivateRoute>
+							<Shop/>
+						</PrivateRoute>
+					}
+				/>
+			</Route>
+			<Route path={'product'} element={<MainLayout/>}>
+				{/* <Route index element = {<Products>}/> */}
+				<Route 
+					path={':productId'} 
+					element={
+						<PrivateRoute>
+							<Product/>
+						</PrivateRoute>
+					}
+				/>
+			</Route>
+		</Routes>
 	</BrowserRouter>
   );
 }

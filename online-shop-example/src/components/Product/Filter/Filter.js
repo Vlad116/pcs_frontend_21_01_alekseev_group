@@ -4,8 +4,6 @@ import SearchIcon from '@mui/icons-material/Search'
 import InputBase from '@mui/material/InputBase';
 import { Box, ToggleButton, ToggleButtonGroup, Toolbar } from '@mui/material';
 
-// import { Input, Menu } from 'semantic-ui-react';
-
 const Search = styled('div')(({ theme }) => ({
 	position: 'relative',
 	borderRadius: theme.shape.borderRadius,
@@ -22,7 +20,7 @@ const Search = styled('div')(({ theme }) => ({
   }));
   
   const SearchIconWrapper = styled('div')(({ theme }) => ({
-	padding: theme.spacing(0, 2),
+	padding: theme.spacing(0, 1.5),
 	height: '100%',
 	position: 'absolute',
 	pointerEvents: 'none',
@@ -36,9 +34,11 @@ const Search = styled('div')(({ theme }) => ({
 	'& .MuiInputBase-input': {
 	  padding: theme.spacing(1, 1, 1, 0),
 	  // vertical padding + font size from searchIcon
-	  paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+	  paddingLeft: `calc(1em + ${theme.spacing(3)})`,
 	  transition: theme.transitions.create('width'),
 	  width: '100%',
+	  border: "1px solid grey",
+	  borderRadius: "6px",
 	  [theme.breakpoints.up('sm')]: {
 		width: '15ch',
 		'&:focus': {
@@ -49,7 +49,6 @@ const Search = styled('div')(({ theme }) => ({
   }));
 
 const Filter = ({ setFilter, filterBy, searchQuery, setSearchQuery }) => (
-//   <Menu secondary>
 	<Box sx={{ flexGrow: 1 }}>
 		<Toolbar>
 			<ToggleButtonGroup
@@ -66,52 +65,17 @@ const Filter = ({ setFilter, filterBy, searchQuery, setSearchQuery }) => (
 			</ToggleButtonGroup>
 			<Search>
 				<SearchIconWrapper>
-				<SearchIcon />
+					<SearchIcon />
 				</SearchIconWrapper>
 				<StyledInputBase
-				placeholder="Введите запрос..."
-				inputProps={{ 'aria-label': 'search' }}
-				onChange={e => setSearchQuery(e.target.value)}
-				value={searchQuery}
+					placeholder="Введите запрос..."
+					inputProps={{ 'aria-label': 'search' }}
+					onChange={e => setSearchQuery(e.target.value)}
+					value={searchQuery}
 				/>
 			</Search>
 		</Toolbar>
-		{/* <Input
-        icon="search"
-        onChange={e => setSearchQuery(e.target.value)}
-        value={searchQuery}
-        placeholder="Введите запрос..."
-      /> */}
 	</Box>
-    // <Menu.Item
-    //   active={filterBy === 'all'}
-    //   onClick={setFilter.bind(this, 'all')}>
-    //   Все
-    // </Menu.Item>
-    // <Menu.Item
-    //   active={filterBy === 'price_high'}
-    //   onClick={setFilter.bind(this, 'price_high')}>
-    //   Цена (дорогие)
-    // </Menu.Item>
-    // <Menu.Item
-    //   active={filterBy === 'price_low'}
-    //   onClick={setFilter.bind(this, 'price_low')}>
-    //   Цена (дешевые)
-    // </Menu.Item>
-    // <Menu.Item
-    //   active={filterBy === 'author'}
-    //   onClick={setFilter.bind(this, 'author')}>
-    //   Автор
-    // </Menu.Item>
-    // <Menu.Item>
-    //   <Input
-    //     icon="search"
-    //     onChange={e => setSearchQuery(e.target.value)}
-    //     value={searchQuery}
-    //     placeholder="Введите запрос..."
-    //   />
-    // </Menu.Item>
-//   </Menu>
 );
 
 export default Filter;

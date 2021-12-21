@@ -10,13 +10,14 @@ import Fade from '@mui/material/Fade';
 import Paper from '@mui/material/Paper';
 import CartComponent from "./Cart/Cart";
 import IconButton from '@mui/material/IconButton';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LogoutIcon from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
 
-const MenuComponent = ({ totalPrice, count, items }) => {
+const MenuComponent = ({ totalPrice, count, items, onDeteteFromCartHandler }) => {
 	const navigate = useNavigate()
 	const username = localStorage.getItem('username')
-
+	console.log(items)
 	const logoutHandler = () => {
 		if(username && localStorage.getItem('userId')) {
 			localStorage.removeItem('username')
@@ -40,8 +41,8 @@ const MenuComponent = ({ totalPrice, count, items }) => {
 							</Typography><PopupState variant="popper" popupId="demo-popup-popper">
 								{(popupState) => (
 									<div>
-										<Button variant="contained" sx={{ mr: 2 }} {...bindToggle(popupState)}>
-											Корзина (<b>{count}</b>)
+										<Button variant="contained" className="CartButton" sx={{ mr: 2 }} {...bindToggle(popupState)}>
+											Корзина (<b>{count}</b>) <ShoppingCartIcon/>
 										</Button>
 										<Popper
 											{...bindPopper(popupState)}
@@ -50,9 +51,7 @@ const MenuComponent = ({ totalPrice, count, items }) => {
 											{({ TransitionProps }) => (
 												<Fade {...TransitionProps} timeout={350}>
 													<Paper>
-														{items.map(book => (
-															<CartComponent {...book} />
-														))}
+														<CartComponent items={items} onDeteteFromCartHandler={onDeteteFromCartHandler} />
 													</Paper>
 												</Fade>
 											)}

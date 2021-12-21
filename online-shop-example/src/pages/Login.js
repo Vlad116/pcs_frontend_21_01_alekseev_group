@@ -43,8 +43,8 @@ export default function Login() {
 		// eslint-disable-next-line no-console
 		console.log(formData);
 		console.log({
-		email: formData.get('email'),
-		password: formData.get('password'),
+			email: formData.get('email'),
+			password: formData.get('password'),
 		});
 		getData(`${host}/users`).then((data) => {
 			console.log(data);

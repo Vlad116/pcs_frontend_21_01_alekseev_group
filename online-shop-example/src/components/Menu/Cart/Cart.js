@@ -1,5 +1,4 @@
 import React from "react";
-// import { List, Button, Image } from "semantic-ui-react"
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
@@ -8,43 +7,36 @@ import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-function generate(element) {
-	return [0, 1, 2].map((value) =>
-	  React.cloneElement(element, {
-		key: value,
-	  }),
-	);
-}
-
-const CartComponent = ({ title, id, image, removeFromCart }) => {
+const CartComponent = ({ items, onDeteteFromCartHandler }) => {
+	console.log(items)
 	return(
 		<List>
-		{generate(
-		  <ListItem
-			secondaryAction={
-			  <IconButton 
-			  	edge="end"
-				aria-label="delete"
-				onClick={() => console.log(id)}
+			{items.length !== 0 && items.map((item) =>
+				<ListItem
+					secondaryAction={
+						<IconButton 
+							edge="end"
+							aria-label="delete"
+							onClick={() => {
+								console.log(item.id)
+								onDeteteFromCartHandler(item.id)
+							}}
+						>
+							<DeleteIcon />
+						</IconButton>
+					}
 				>
-				
-				<DeleteIcon />
-			  </IconButton>
-			}
-		  >
-			<ListItemAvatar>
-			<Avatar
-				alt="Book image"
-				src={image}
-				sx={{ width: 24, height: 24 }}
-			/>
-			</ListItemAvatar>
-			<ListItemText
-			  primary={title}
-			/>
-		  </ListItem>,
-		)}
-	  </List>
+					<ListItemAvatar>
+						<Avatar
+							alt="Book image"
+							src={item.image}
+							sx={{ width: 24, height: 24 }}
+						/>
+					</ListItemAvatar>
+					<ListItemText primary={item.title} />
+				</ListItem>
+			)}
+	  	</List>
 	);
 }
 
