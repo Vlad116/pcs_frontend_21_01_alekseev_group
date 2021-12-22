@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { 
 	Link as RouterLink,
-	useNavigate,
 	useParams 
 } from "react-router-dom"
 import Grid from "@mui/material/Grid";
-import { makeStyles } from "@mui/styles";
 import MaterialLink from '@mui/material/Link';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -19,10 +17,10 @@ import { host } from '../constants'
 
 const Product = () => {
 	const { productId } = useParams();
-	
 	const [product, setProduct] = useState({})
 	const [isLoading, setLoading] = useState(false)
 	console.log(productId)
+
 	useEffect(() => {
 		if(!isLoading) {
 			setLoading(true)

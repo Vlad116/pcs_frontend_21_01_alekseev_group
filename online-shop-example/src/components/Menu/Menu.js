@@ -18,7 +18,7 @@ import './index.css';
 const MenuComponent = ({ totalPrice, count, items, onDeteteFromCartHandler }) => {
 	const navigate = useNavigate()
 	const username = localStorage.getItem('username')
-	console.log(items)
+
 	const logoutHandler = () => {
 		if(username && localStorage.getItem('userId')) {
 			localStorage.removeItem('username')

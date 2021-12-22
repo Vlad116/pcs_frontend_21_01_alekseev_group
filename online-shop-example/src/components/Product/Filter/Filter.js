@@ -3,6 +3,7 @@ import { styled, alpha } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search'
 import InputBase from '@mui/material/InputBase';
 import { Box, ToggleButton, ToggleButtonGroup, Toolbar } from '@mui/material';
+import './index.css'
 
 const Search = styled('div')(({ theme }) => ({
 	position: 'relative',
@@ -58,20 +59,21 @@ const Filter = ({ setFilter, filterBy, searchQuery, setSearchQuery }) => (
 				exclusive
 				onChange={setFilter}
 			>
-				<ToggleButton value="all">Все</ToggleButton>
-				<ToggleButton value="price_high">Цена (дорогие)</ToggleButton>
-				<ToggleButton value="price_low">Цена (дешевые)</ToggleButton>
-				<ToggleButton value="author">Автор</ToggleButton>
+				<ToggleButton value="all" className="FilterBtn" sx={{ color: '#ffffff'}}>Все</ToggleButton>
+				<ToggleButton value="price_high" className="FilterBtn" >Цена (дорогие)</ToggleButton>
+				<ToggleButton value="price_low" className="FilterBtn" >Цена (дешевые)</ToggleButton>
+				<ToggleButton value="author" className="FilterBtn" >Автор</ToggleButton>
 			</ToggleButtonGroup>
 			<Search>
 				<SearchIconWrapper>
-					<SearchIcon />
+					<SearchIcon sx={{ color: '#ffffff'}}/>
 				</SearchIconWrapper>
 				<StyledInputBase
 					placeholder="Введите запрос..."
 					inputProps={{ 'aria-label': 'search' }}
 					onChange={e => setSearchQuery(e.target.value)}
 					value={searchQuery}
+					className='SearchInput'
 				/>
 			</Search>
 		</Toolbar>

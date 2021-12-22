@@ -8,7 +8,7 @@ const Home = () => {
     return (
 		<>
 			<Menu />
-			<Typography>
+			<Typography sx={{ color: '#ffffff', paddingTop: '10vh'}}>
 				Магазин книг с лучшими ценами и подробным описанием товаров!
 			</Typography>
 		</>
