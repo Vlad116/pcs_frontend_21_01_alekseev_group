@@ -13,6 +13,7 @@ import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LogoutIcon from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
+import './index.css';
 
 const MenuComponent = ({ totalPrice, count, items, onDeteteFromCartHandler }) => {
 	const navigate = useNavigate()
@@ -28,7 +29,7 @@ const MenuComponent = ({ totalPrice, count, items, onDeteteFromCartHandler }) =>
 
 	return (
 		<>
-			<AppBar position="static">
+			<AppBar position="static" className='Header'>
 				<Toolbar>
 					<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
 						Пример главной магазина
