@@ -46,7 +46,7 @@ const Product = () => {
 				alignItems: 'center',
 				justifyContent: 'center',
 				height: '100%',
-				paddingTop: '8vw',
+				paddingTop: '4vw',
 			}}>
 				<Card>
 					<MaterialLink component={RouterLink} to={`/product/${product.id}`}>
