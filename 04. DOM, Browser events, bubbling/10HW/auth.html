@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Промежуточная атт.</title>
+  </head>
+  <body>
+    <main>
+      <div class="main-container">
+        <div class="form-container form-container-sign-up form-container_visible">
+          <a id="toSignIn">Авторизоваться</a>
+          <section class="form-title">Регистрация</section>
+          <form class="form">
+            <div class="form__e-mail-title-container">
+              <h2 class="form__e-mail-title">Email</h2>
+            </div>
+            <div class="form__input-email-container">
+              <div class="form__input-email-star">*</div>
+              <input
+                class="form__input-email"
+                type="email"
+                id="email"
+                name="input-email"
+                placeholder="johndoe@email.com"
+              />
+              <label class="form__input-email-label" for="input-email"
+                >E-mail</label
+              >
+            </div>
+            <div class="form__input-email-validate-text-wrong">
+              *Вы ввели неккоректный Email
+            </div>
+            <div class="form__password-title-container">
+              <h2 class="form__password-title">Пароль</h2>
+            </div>
+            <div class="form__input-password-container">
+              <div class="form__input-password-star">*</div>
+              <input
+                class="form__input-password"
+                type="password"
+                id="input-password"
+                name="input-password"
+                placeholder="Введите пароль"
+              />
+              <label class="form__input-password-label" for="input-password"
+                >Пароль</label
+              >
+            </div>
+            <div class="form__input-password-validate-text-wrong">
+              *Пароль слишком короткий!
+            </div>
+            <div class="form__checkbox-container">
+              <div class="form__input-checkbox-star">*</div>
+              <input
+                class="form__checkbox"
+                type="checkbox"
+                id="checkbox"
+                name="checkbox"
+              />
+              <div class="form__checkbox-square"></div>
+              <span class="form__checkbox-label" for="checkbox"
+                >Я согласен с
+              </span>
+              <a
+                class="form__checkbox-label-link"
+                href="https://google.com"
+                target="_blank"
+                >Правилами пользования приложением</a
+              >
+              <span class="form__checkbox-not-checked"
+                >* Поле обязательно для заполнения</span
+              >
+            </div>
+            <div class="form__submit-button-container">
+              <button
+                class="form__submit-button"
+                type="submit"
+                id="reg-submit"
+                name="submit-button"
+              >
+                <p class="form__submit-button-text">Регистрация</p>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="form-container form-container-sign-in">
+          <a id="toSignUp">Зарегистрироваться</a>
+          <section class="form-title">Вход</section>
+          <form class="form">
+            <div class="form__e-mail-title-container">
+              <h2 class="form__e-mail-title">Email</h2>
+            </div>
+            <div class="form__input-email-container">
+              <div class="form__input-email-star">*</div>
+              <input
+                class="form__input-email"
+                type="email"
+                id="email"
+                name="input-email"
+                placeholder="johndoe@email.com"
+              />
+              <label class="form__input-email-label" for="input-email"
+                >E-mail</label
+              >
+            </div>
+            <div class="form__input-email-validate-text-wrong">
+              *Вы ввели неккоректный Email
+            </div>
+            <div class="form__password-title-container">
+              <h2 class="form__password-title">Пароль</h2>
+            </div>
+            <div class="form__input-password-container">
+              <div class="form__input-password-star">*</div>
+              <input
+                class="form__input-password"
+                type="password"
+                id="input-password"
+                name="input-password"
+                placeholder="Введите пароль"
+              />
+              <label class="form__input-password-label" for="input-password"
+                >Пароль</label
+              >
+            </div>
+            <div class="form__input-password-validate-text-wrong">
+              *Пароль слишком короткий!
+            </div>
+            <div class="form__checkbox-container">
+              <div class="form__input-checkbox-star">*</div>
+              <input
+                class="form__checkbox"
+                type="checkbox"
+                id="checkbox"
+                name="checkbox"
+              />
+              <div class="form__checkbox-square"></div>
+              <span class="form__checkbox-label" for="checkbox"
+                >Я согласен получать обновления на почту
+            </div>
+            <div class="form__submit-button-container">
+              <button
+                class="form__submit-button"
+                type="submit"
+                id="login-submit"
+                name="submit-button"
+              >
+                <p class="form__submit-button-text">Вход</p>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <script src="./script.js"></script>
+      <script>
+        const onLoadHandler = () => {
+          console.log(getCookie("name"));
+            if (getCookie("name") !== undefined) {
+              document.location.replace(
+                "http://127.0.0.1:5500/04.%20DOM,%20Browser%20events,%20bubbling/10HW/index.html"
+              );
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", onLoadHandler);
+      </script>
+    </main>
+    <footer></footer>
+  </body>
+</html>

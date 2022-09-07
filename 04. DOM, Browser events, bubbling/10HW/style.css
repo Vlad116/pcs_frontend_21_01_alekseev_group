@@ -1,384 +1,401 @@
 * {
-	box-sizing: border-box;
-	margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 body {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 header {
-	position: absolute;
-	box-shadow: 1px 1px 3px white;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 100;
+  position: absolute;
+  box-shadow: 1px 1px 3px white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
 }
 .menu {
-	background: linear-gradient(#3a34eb, #0f07f0);
-	width: 100%;
-	height: fit-content;
-	text-align: center;
-	margin: 0;
-	
+  background: linear-gradient(#3a34eb, #0f07f0);
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+  margin: 0;
 }
 .menu__title {
-	font-size: 3vw;
-	width: 100%;
-	color: white;
-	margin: 0;
-	padding: 5px;
-	text-shadow: 1px 1px 2px black;
+  font-size: 3vw;
+  width: 100%;
+  color: white;
+  margin: 0;
+  padding: 5px;
+  text-shadow: 1px 1px 2px black;
 }
 .main-container {
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-color: #1B2473;
-	align-content: center;
-
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #1b2473;
+  align-content: center;
 }
 .form-container {
-	position: relative;
-	margin-top: 10vw;
-	width: 600px;
-	height: 412px;
-	border-radius: 20px;
-	background-color: white;
-	align-self: center;
+  position: relative;
+  margin-top: 10vw;
+  width: 600px;
+  height: 412px;
+  border-radius: 20px;
+  background-color: white;
+  align-self: center;
+  padding: 11px;
+  display: none;
 }
+
+.form-container_visible {
+  display: block;
+}
+
+.form-container > a {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #1a226b;
+  width: 96%;
+  text-align: end;
+  display: block;
+  cursor: pointer;
+}
+
 @font-face {
-	font-family: "Roboto";
-	src: url("Roboto-Bold.ttf");
+  font-family: "Roboto";
+  src: url("Roboto-Bold.ttf");
 }
 .form-title {
-	position: absolute;
-	left: 149px;
-	top: 26px;
-	margin-bottom: 17px;
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 50px;
-	line-height: 50px;
-	color: #787878;
+  position: absolute;
+  left: 149px;
+  top: 26px;
+  margin-bottom: 17px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 50px;
+  color: #787878;
 }
-.form__E-mail-title-container {
-	position: absolute;
-	top:  93px;
-	left: 53px;
+.form__e-mail-title-container {
+  position: absolute;
+  top: 93px;
+  left: 53px;
 }
-.form__E-mail-title {
-	color: #787878;
-	font-family: Roboto;
-	font-size: 16px;
-	line-height: 16px;
+.form__e-mail-title {
+  color: #787878;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 16px;
 }
 .form__input-email-container {
-	position: absolute;
-	display: flex;
-	top: 112px;
-	left: 37px;
-	right: 5px;
-	bottom: 251px;
+  position: absolute;
+  display: flex;
+  top: 112px;
+  left: 37px;
+  right: 5px;
+  bottom: 251px;
 }
 .form__input-email-star {
-	font-size: 18px;
-	color: #787878;
-	opacity: 0;
+  font-size: 18px;
+  color: #787878;
+  opacity: 0;
 }
 .form__input-email {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding-left: 15px;
-	border-radius: 10px;
-	border: 2px solid #787878;
-	font-family: Roboto;
-	font-size: 28px;
-	line-height: 36px;
-	color: black;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding-left: 15px;
+  border-radius: 10px;
+  border: 2px solid #787878;
+  font-family: Roboto;
+  font-size: 28px;
+  line-height: 36px;
+  color: black;
 }
 .form__input-email::placeholder {
-	margin: 0;
-	font-family: Roboto;
-	font-size: 28px;
-	line-height: 36px;
-	color: #787878;
+  margin: 0;
+  font-family: Roboto;
+  font-size: 28px;
+  line-height: 36px;
+  color: #787878;
 }
 .form__input-email-label {
-	opacity: 0;
+  opacity: 0;
 }
 .form__input-email-validate-text-wrong {
-	position: relative;
-	font-family: Roboto;
-	padding-left: 60px;
-	color: red;
-	font-size: 12px;
-	top: 163px;
-	opacity: 0;
+  position: relative;
+  font-family: Roboto;
+  padding-left: 60px;
+  color: red;
+  font-size: 12px;
+  top: 163px;
+  opacity: 0;
 }
 .form__password-title-container {
-	position: absolute;
-	top:  174px;
-	left: 53px;
+  position: absolute;
+  top: 174px;
+  left: 53px;
 }
 .form__password-title {
-	color: #787878;
-	font-family: Roboto;
-	font-size: 16px;
-	line-height: 16px;
+  color: #787878;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 16px;
 }
 .form__input-password-container {
-	position: absolute;
-	display: flex;
-	top: 193px;
-	left: 37px;
-    right: -5px;
-	bottom: 170px;
+  position: absolute;
+  display: flex;
+  top: 193px;
+  left: 37px;
+  right: -5px;
+  bottom: 170px;
 }
 .form__input-password-star {
-	font-size: 18px;
-	color: #787878;
-	opacity: 0;
+  font-size: 18px;
+  color: #787878;
+  opacity: 0;
 }
 .form__input-password {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding-left: 15px;
-	border-radius: 10px;
-	border: 2px solid #787878;
-	font-family: Roboto;
-	font-size: 28px;
-	line-height: 36px;
-	color: black;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding-left: 15px;
+  border-radius: 10px;
+  border: 2px solid #787878;
+  font-family: Roboto;
+  font-size: 28px;
+  line-height: 36px;
+  color: black;
 }
 .form__input-password::placeholder {
-	margin: 0;
-	opacity: 0.5;
-	font-family: Roboto;
-	font-size: 28px;
-	line-height: 36px;
-	color: #787878;
+  margin: 0;
+  opacity: 0.5;
+  font-family: Roboto;
+  font-size: 28px;
+  line-height: 36px;
+  color: #787878;
 }
 .form__input-password-label {
-	opacity: 0;
+  opacity: 0;
 }
 .form__input-password-validate-text-wrong {
-	position: relative;
-	top: 230px;
-	font-size: 12px;
-	font-family: Roboto;
-	color: red;
-	padding-left: 55px;
-	opacity: 0;
+  position: relative;
+  top: 230px;
+  font-size: 12px;
+  font-family: Roboto;
+  color: red;
+  padding-left: 55px;
+  opacity: 0;
 }
 .form__checkbox-container {
-	position: absolute;
-	display: flex;
-	flex-wrap: wrap;
-	width: fit-content;
-	top: 258px;
-	left: 36px;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  top: 258px;
+  left: 36px;
 }
 .form__input-checkbox-star {
-	font-size: 18px;
-	color: red;
-	opacity: 0;
+  font-size: 18px;
+  color: red;
+  opacity: 0;
 }
 .form__checkbox {
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	width: 28%;
-	height: 100%;
-	margin: 0;
-	z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 28%;
+  height: 100%;
+  margin: 0;
+  z-index: 100;
 }
 .form__checkbox-square {
-	height: 24px;
-	width: 24px;
-	padding: 0;
-	border: 2px solid #787878;
-	border-radius: 7px;
+  height: 24px;
+  width: 24px;
+  padding: 0;
+  border: 2px solid #787878;
+  border-radius: 7px;
 }
 .form__checkbox-label {
-	position: relative;
-	text-align: center;
-	vertical-align: middle;
-	padding-top: 5px;
-	margin-left: 10px;
-	font-family: Roboto;
-	font-size: 14px;
-	line-height: 16px;
-	color: #787878;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 5px;
+  margin-left: 10px;
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 16px;
+  color: #787878;
 }
 .form__checkbox-label-link {
-	position: relative;
-	text-align: center;
-	vertical-align: middle;
-	padding-top: 5px;
-	margin-left: 10px;
-	font-family: Roboto;
-	font-size: 14px;
-	line-height: 16px;
-	color: #787878;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 5px;
+  margin-left: 10px;
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 16px;
+  color: #787878;
 }
 .form__checkbox:checked + .form__checkbox-square {
-	background-image: url(check-mark.png);
-	background-origin: border-box;
-	background-repeat: no-repeat;
+  background-image: url(check-mark.png);
+  background-origin: border-box;
+  background-repeat: no-repeat;
 }
 .form__checkbox-not-checked {
-	position: relative;
-	flex-basis: 100vw;
-	padding-left: 15px;
-	font-family: Roboto;
-	font-size: 12px;
-	line-height: 16px;
-	color: red;
-	opacity: 0;
+  position: relative;
+  flex-basis: 100vw;
+  padding-left: 15px;
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: 16px;
+  color: red;
+  opacity: 0;
 }
 .form__submit-button-container {
-	position: absolute;
-	top: 334px;
-	left: 218px;
-	right: 202px;
-	bottom: 26px;
+  position: absolute;
+  top: 334px;
+  left: 218px;
+  right: 202px;
+  bottom: 26px;
 }
 .form__submit-button {
-	width: 100%;
-	height: 100%;
-	background-color: #1A226B;
-	border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: #1a226b;
+  border-radius: 10px;
 }
 .form__submit-button-text {
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 24px;
-	line-height: 16px;
-	color: white;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 16px;
+  color: white;
 }
-@media screen and (max-width: 768px)  {
-.main-container {
-	padding: 10px;
-}
-.form-container {
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	max-width: 600px;
-	max-height: 412px;
-	width: 100%;
-	height: 100%;
-	border-radius: 20px;
-	background-color: white;
-	align-self: center;
-	align-content: center;
-	align-items: center;
-}
-.form {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	height: 100%;
-}
-.form-title {
-	position: static;
-	align-self: center;
-	text-align: center;
-	margin-top: 26px;
-	margin-bottom: 17px;
-	font-size: 7vw;
-	
-}
-.form__E-mail-title-container {
-	position: static;
-	margin-left: 53px;
-}
-.form__E-mail-title {
-	font-size: 2vw;
-}
-.form__input-email-container {
-	position: static;
-	max-height: 49px;
-	padding-left: 45px;
-	padding-right: 46px;
-}
-.form__input-email {
-	width: 100%;
-	max-height: 49px;
-	height: 8vw;
-	padding-left: 15px;
-	font-size: 3.5vw;
-	
-}
-.form__input-email::placeholder {
-	font-size: 3.5vw;
-}
-.form__input-email-validate-text-wrong{
-	position: static;
-	font-size: 2vw;
-}
-.form__password-title-container {
-	position: static;
-	margin-top: 13px;
-	margin-left: 53px;
-	
-}
-.form__password-title {
-	font-size: 2vw;
-}
-.form__input-password-container {
-	position: static;
-	max-height: 49px;
-	height: 8vw;
-	margin-left: 45px;
-	margin-right: 36px;
-}
-.form__input-password {
-	font-size: 3.5vw;	
-}
-.form__input-password::placeholder {
-	font-size: 3.5vw;
-}
-.form__input-password-validate-text-wrong {
-     position: static;
-	 font-size: 2vw;
-}
-.form__checkbox-container {
-	position: relative;
-	top: 0;
-	left: 0;
-	display: flex;
-	width: fit-content;
-	margin-top: 16px;
-	margin-left: 45px;
-}
-.form__checkbox-label {
-	font-size: 2vw;
-}
-.form__checkbox-label-link {
-	font-size: 2vw;
-}
-.form__checkbox-not-checked {
-	font-size: 2vw;
-}
-.form__submit-button-container {
-	position: static;
-	align-self: center;
-	margin-top: 22px;
-	max-height: 52px;
-	height: 10vw;
-	max-width: 180px;
-	width: 25vw;
-}
-.form__submit-button-text {
-	font-size: 3.5vw;
-}
+@media screen and (max-width: 768px) {
+  .main-container {
+    padding: 10px;
+  }
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 600px;
+    max-height: 412px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: white;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  .form-title {
+    position: static;
+    align-self: center;
+    text-align: center;
+    margin-top: 26px;
+    margin-bottom: 17px;
+    font-size: 7vw;
+  }
+  .form__E-mail-title-container {
+    position: static;
+    margin-left: 53px;
+  }
+  .form__E-mail-title {
+    font-size: 2vw;
+  }
+  .form__input-email-container {
+    position: static;
+    max-height: 49px;
+    padding-left: 45px;
+    padding-right: 46px;
+  }
+  .form__input-email {
+    width: 100%;
+    max-height: 49px;
+    height: 8vw;
+    padding-left: 15px;
+    font-size: 3.5vw;
+  }
+  .form__input-email::placeholder {
+    font-size: 3.5vw;
+  }
+  .form__input-email-validate-text-wrong {
+    position: static;
+    font-size: 2vw;
+  }
+  .form__password-title-container {
+    position: static;
+    margin-top: 13px;
+    margin-left: 53px;
+  }
+  .form__password-title {
+    font-size: 2vw;
+  }
+  .form__input-password-container {
+    position: static;
+    max-height: 49px;
+    height: 8vw;
+    margin-left: 45px;
+    margin-right: 36px;
+  }
+  .form__input-password {
+    font-size: 3.5vw;
+  }
+  .form__input-password::placeholder {
+    font-size: 3.5vw;
+  }
+  .form__input-password-validate-text-wrong {
+    position: static;
+    font-size: 2vw;
+  }
+  .form__checkbox-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: fit-content;
+    margin-top: 16px;
+    margin-left: 45px;
+  }
+  .form__checkbox-label {
+    font-size: 2vw;
+  }
+  .form__checkbox-label-link {
+    font-size: 2vw;
+  }
+  .form__checkbox-not-checked {
+    font-size: 2vw;
+  }
+  .form__submit-button-container {
+    position: static;
+    align-self: center;
+    margin-top: 22px;
+    max-height: 52px;
+    height: 10vw;
+    max-width: 180px;
+    width: 25vw;
+  }
+  .form__submit-button-text {
+    font-size: 3.5vw;
+  }
 }

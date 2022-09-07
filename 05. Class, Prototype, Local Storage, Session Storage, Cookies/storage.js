@@ -1,6 +1,6 @@
 /*
-	sessionStore – очень волатильное хранилище. 
-	Оно не хранится долго. К нему можно относиться, как к текстовому документу без кнопки “Сохранить”. 
+	sessionStorage – очень волатильное хранилище. 
+	Оно не хранится долго. К нему можно относиться, как к текстовому документу без кнопки "Сохранить". 
 	Все в нем хранящееся превратится в прах, стоит вам закрыть вкладку браузера. 
 	Ну, почти. Чисто технически кое-какой JavaScript может перед этим отослать данные на удаленный сервер, который запомнит их для вас.
 */
@@ -21,9 +21,9 @@ console.log(data);
 	Другие сайты не смогут её прочитать.
 */
 // const toogleBtn = document.querySelector('#toggleDark');
-// 
+//
 // toogleBtn.addEventListener('click', () => {
-// 	
+//
 // });
 
 // jQuery("#toggleDark").click(function () {
@@ -37,7 +37,7 @@ console.log(data);
 // 		localStorage.setItem("darkTheme", false);
 // 	}
 // });
-// 
+//
 // if (localStorage.getItem("darkTheme") === "true") {
 // 	jQuery("body").toggleClass("dark");
 // 	jQuery("#toggleDark").text("Светлая тема");
